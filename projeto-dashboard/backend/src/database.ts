@@ -1,8 +1,8 @@
 import sql from "mssql";
 
 export const dbConfig = {
-    user: "sa",
-    password:"",
+    user: "adm",
+    password:"felipeqwe123",
     server: "DESKTOP-ETNM96H\SQLEXPRESS",
     database:"DashboardDB",
     options: {
@@ -12,7 +12,14 @@ export const dbConfig = {
 
 };
 
-export async function getConnection() {
-    return await sql.connect(dbConfig);
 
+export async function getConnection() {
+    try {
+        const poll = await sql.connect(dbConfig);
+        return poll;
+    } catch (error) {
+        console.error("Falha ao conectar no banco de dados: ", error);
+        throw error;
+    }   
+    
 }

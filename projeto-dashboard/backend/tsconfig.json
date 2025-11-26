@@ -1,13 +1,20 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    /* --- Configurações Essenciais do Módulo --- */
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "esModuleInterop": true,
+    "target": "ES2022", // Roda em versões recentes do Node.js
+
+    /* --- Padrões do TypeScript --- */
     "strict": true,
-    "skipLibCheck": true
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* --- Configuração do Projeto --- */
+    "outDir": "./dist", // Onde os arquivos .js compilados irão
+    "rootDir": "./src", // Onde estão seus arquivos .ts
   },
-  "include": ["src"]
+  "include": ["src/**/*"], // Quais arquivos compilar
+  "exclude": ["node_modules"] // O que ignorar
 }
